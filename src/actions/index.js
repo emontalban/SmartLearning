@@ -1,20 +1,18 @@
-export function fetchRecentsPost() {
+import { SET_RECENT_POSTS } from './types'
+
+import axios from "axios";
+
+export function fetchRecentPosts() {
     return function(dispatch)  {
-        console.log ('hello')
+        axios.get(`https://dummyjson.com/products`)
+            .then(response =>{
+                console.log(response.data);
+                dispatch({ 
+                    type: 'SET_RECENT_POSTS', 
+                    payload: response.data.posts 
+                });
+            })
+            
     }
   
 };
-
-// const fetchUserData = (userId) => {
-//   return async (dispatch, getState) => {
-//     dispatch({ type: 'FETCH_USER_REQUEST' });
-
-//     try {
-//       const response = await fetch(`https://example.com{userId}`);
-//       const data = response.json();
-//       dispatch({ type: 'FETCH_USER_SUCCESS', payload: data });
-//     } catch (error) {
-//       dispatch({ type: 'FETCH_USER_FAILURE', error });
-//     }
-//   };
-// };

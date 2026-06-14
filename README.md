@@ -220,20 +220,29 @@ Nota:
 - Usar `--strict-ssl=false` solo si aparece ese error de certificado.
 - No hace falta guardar ese ajuste en `.npmrc`.
 
-## 6. Instalar Redux-form
 
-Necesitaamos instalar redux-form
+
+Necesitamos instalar redux-form
 ```bash
 npm install redux-form
 ```
-## 8. Instalar Redux-form
 
-Necesitaamos instalar redux-form
+
+Necesitamos instalar redux-form
 ```bash
 npm install redux-thunk@2.3.0
 ```
 version compatible con el proyecto
-## 9. Probar el proyecto
+
+
+Instalamos axios
+
+```bash
+npm install axios
+```
+
+
+## 6. Probar el proyecto
 
 Para comprobar que compila:
 
