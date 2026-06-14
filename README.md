@@ -256,6 +256,23 @@ Para arrancar en desarrollo:
 npm start
 ```
 
+## 7. Redux DevTools
+Esta linea la hemos eliminado porque esta obsoleto
+```js
+const createStoreWithMiddleware = applyMiddleware(thunk)(compose((window.devToolsExtension ? window.devToolsExtension() : f => f)(createStore)));
+```
+Y hemos añadido  
+```js
+const composeEnhancers =
+  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+const store = createStore(
+  reducers,
+  composeEnhancers(applyMiddleware(thunk))
+);
+
+```
+
 `npm start` levanta `webpack-dev-server`, asi que es normal que no termine y se quede la terminal abierta.
 
 Abrir:
