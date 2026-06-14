@@ -226,8 +226,14 @@ Necesitaamos instalar redux-form
 ```bash
 npm install redux-form
 ```
+## 8. Instalar Redux-form
 
-## 7. Probar el proyecto
+Necesitaamos instalar redux-form
+```bash
+npm install redux-thunk@2.3.0
+```
+version compatible con el proyecto
+## 9. Probar el proyecto
 
 Para comprobar que compila:
 
