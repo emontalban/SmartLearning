@@ -220,7 +220,14 @@ Nota:
 - Usar `--strict-ssl=false` solo si aparece ese error de certificado.
 - No hace falta guardar ese ajuste en `.npmrc`.
 
-## 6. Probar el proyecto
+## 6. Instalar Redux-form
+
+Necesitaamos instalar redux-form
+```bash
+npm install redux-form
+```
+
+## 7. Probar el proyecto
 
 Para comprobar que compila:
 
