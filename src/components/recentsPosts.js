@@ -12,9 +12,9 @@ class RecentPosts extends Component {
 
     renderPosts = () => {
         return this.props.recentPosts.map((post, index) => {
-            if(index<3){
+            if(index < 3){
                 return (
-                    <Post {...post} key={index}/>
+                    <Post {...post} type="recent" key={index}/>
                 );
             }     
         });
