@@ -10,10 +10,10 @@ class Home extends Component {
 
 
     handleFormSubmit = function (query ) {
-        this.props.fetchPostsWithQuery(query);
-        this.props.history.push('/results');
-
-        }
+        this.props.fetchPostsWithQuery(query, () =>{
+            this.props.history.push('/results');
+        });
+    }
 
     render() {
         return (
