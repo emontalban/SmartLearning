@@ -31,3 +31,9 @@ body {
 .post-topic{
     margin:0 4 px;
 }
+
+.recent-post__topics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
