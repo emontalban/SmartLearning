@@ -1,4 +1,4 @@
-import { SET_RECENT_POSTS, SET_RESULTS_POSTS } from './types'
+import { SET_RECENT_POSTS, SET_RESULTS_POSTS, SET_SELECTED_POST } from './types'
 
 import axios from "axios";
 
@@ -30,3 +30,14 @@ export function fetchPostsWithQuery(query, callback) {
     }
 }
 
+export function fetchPost(postId) {
+    return function(dispatch) {
+        axios.get(`https://dummyjson.com/posts/${postId}`)
+            .then(response => {
+                dispatch({
+                    type: SET_SELECTED_POST,
+                    payload: response.data
+                })
+            })
+    }
+}

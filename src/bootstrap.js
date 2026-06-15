@@ -10,6 +10,7 @@ import reducers from "./reducers";
 import "./style/main.scss";
 import Home from "./components/home";
 import Results from "./components/results";
+import PostDetail from "./components/postDetail";
 
 const composeEnhancers =
   window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -26,6 +27,7 @@ function main() {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/results" component={Results} />
+           <Route path="/posts/:id" component={PostDetail} />
         </Switch>
       </BrowserRouter>
     </Provider>,

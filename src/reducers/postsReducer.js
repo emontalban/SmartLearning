@@ -1,9 +1,10 @@
-import { SET_RECENT_POSTS, SET_RESULTS_POSTS } from '../actions/types'
+import { SET_RECENT_POSTS, SET_RESULTS_POSTS, SET_SELECTED_POST } from '../actions/types'
 
 
 const INIT_STATE = {
     resultsPosts: [],
-    recentPosts: []
+    recentPosts: [],
+    selectedPost: null
 }
 
 export default function(state = INIT_STATE, action){
@@ -20,6 +21,12 @@ export default function(state = INIT_STATE, action){
                 return {
                     ...state, 
                     resultsPosts
+                }
+        case SET_SELECTED_POST:
+                const selectedPost = action.payload;
+                return {
+                    ...state,
+                    selectedPost
                 }
     
         default:

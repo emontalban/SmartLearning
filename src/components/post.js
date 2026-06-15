@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
  class Post extends Component {
 
@@ -28,9 +29,9 @@ import React, { Component } from 'react';
         return (
         <div>
             <li className='recent-post'>
-                <div className='recent-post-title'>
+                 <Link className='recent-post-title' to={`/posts/${this.props.id}`}>
                     {this.props.title}
-                </div>
+                </Link>
                 <div className='recent-post__topics'>
                   TAGS:  {this.renderTopic()}
                 </div>
@@ -44,9 +45,9 @@ import React, { Component } from 'react';
                     <div className="result-post__topics">
                         {this.renderTopic()}
                     </div>
-                    <div className="result-post__title">
+                     <Link className='recent-post-title' to={`/posts/${this.props.id}`}>
                         {this.props.title}
-                    </div>
+                    </Link>
                     
                     <div className="result-post__reactions">
                         {this.renderReactions()}

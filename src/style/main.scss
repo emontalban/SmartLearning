@@ -8,12 +8,21 @@ html {
     margin: 0;
     padding: 0;
     box-sizing: inherit;
-    font-family: 'montserrat';
+    font-family: inherit;
 }
 
 body {
     overflow-x: hidden;
     font-weight: normal;
+    min-height: 100vh;
+    box-sizing: border-box;
+    color: #172033;
+    background:
+        radial-gradient(circle at top left, rgba(25, 118, 210, 0.16), transparent 34rem),
+        linear-gradient(135deg, #f7fbff 0%, #eef6ff 48%, #f8fafc 100%);
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.5;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -21,19 +30,312 @@ body {
     -webkit-tap-highlight-color: transparent;
 }
 
+button,
+input {
+    font: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
 .app {
-    margin-top: 2rem;
+    width: min(92vw, 108rem);
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 6.4rem 0;
     display: grid;
     justify-items: center;
+    align-content: start;
+    gap: 3.2rem;
 }
 
+.logo-main {
+    display: grid;
+    place-items: center;
+}
+
+.logo-main a {
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    box-shadow: 0 1.8rem 4rem rgba(23, 32, 51, 0.12);
+    transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.logo-main a:hover,
+.logo-main a:focus {
+    transform: translateY(-0.2rem);
+    box-shadow: 0 2.4rem 5rem rgba(23, 32, 51, 0.16);
+}
+
+.logo-main img {
+    display: block;
+}
+
+.search-bar {
+    width: min(100%, 72rem);
+}
+
+.search-bar__wrapper {
+    display: grid;
+    gap: 1rem;
+    text-align: center;
+}
+
+.search-bar input {
+    width: 100%;
+    height: 6.4rem;
+    border: 0.1rem solid rgba(80, 109, 141, 0.22);
+    border-radius: 0.8rem;
+    outline: none;
+    padding: 0 2.4rem;
+    color: #172033;
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: 0 1.4rem 3.5rem rgba(31, 53, 84, 0.1);
+    transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.search-bar input::placeholder {
+    color: #6f8197;
+}
+
+.search-bar input:focus {
+    border-color: #1976d2;
+    box-shadow: 0 1.8rem 4rem rgba(25, 118, 210, 0.18);
+    transform: translateY(-0.1rem);
+}
+
+.search-bar p {
+    color: #6f8197;
+    font-size: 1.3rem;
+    letter-spacing: 0.02em;
+}
+
+.recent-posts,
+.results-posts {
+    width: 100%;
+}
+
+.recent-posts__wrapper,
+.results-posts__wrapper {
+    width: min(100%, 96rem);
+    margin: 0 auto;
+}
+
+.recent-posts__heading {
+    margin-bottom: 1.6rem;
+    color: #24344d;
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.recent-posts__posts {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.6rem;
+}
+
+.recent-post,
+.result-post {
+    height: 100%;
+    border: 0.1rem solid rgba(80, 109, 141, 0.16);
+    border-radius: 0.8rem;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 1.2rem 3rem rgba(31, 53, 84, 0.08);
+}
+
+.recent-post {
+    display: grid;
+    gap: 1.6rem;
+    padding: 2rem;
+}
+
+.recent-post-title,
+.result-post__title {
+    color: #172033;
+    font-weight: 800;
+    line-height: 1.25;
+     text-decoration: none;
+    transition: color 160ms ease;
+}
+
+.recent-post-title:hover,
+.recent-post-title:focus,
+.result-post__title:hover,
+.result-post__title:focus {
+    color: #1976d2;
+}
+
+.recent-post-title {
+    font-size: 1.8rem;
+}
 
 .post-topic{
-    margin:0 4 px;
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.6rem;
+    padding: 0.4rem 0.9rem;
+    margin: 0 0.4rem 0.4rem 0;
+    border-radius: 99rem;
+    color: #155ca2;
+    background: #e7f2ff;
+    font-size: 1.2rem;
+    font-weight: 700;
 }
 
-.recent-post__topics {
+.recent-post__topics,
+.result-post__topics {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    align-items: center;
+    gap: 0.4rem;
+    color: #6f8197;
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.results-page {
+    width: min(92vw, 108rem);
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 4rem 0 6.4rem;
+    display: grid;
+    justify-items: center;
+    align-content: start;
+    gap: 2.4rem;
+}
+
+.results-page h1 {
+    color: #172033;
+    font-size: clamp(2.8rem, 4vw, 4.2rem);
+    line-height: 1.1;
+}
+
+.results-posts__posts {
+    display: grid;
+    gap: 1.4rem;
+}
+
+.result-post {
+    display: grid;
+    gap: 1.2rem;
+    padding: 2rem 2.4rem;
+}
+
+.result-post__title {
+    font-size: 2rem;
+}
+
+.post-reactions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    color: #516176;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.post-reactions span {
+    padding: 0.5rem 1rem;
+    border-radius: 99rem;
+    background: #f2f6fb;
+}
+
+.post-detail-page {
+    width: min(92vw, 90rem);
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 4rem 0 6.4rem;
+    display: grid;
+    justify-items: center;
+    align-content: start;
+    gap: 2.4rem;
+}
+
+.post-detail {
+    width: 100%;
+    display: grid;
+    gap: 1.8rem;
+    padding: 3rem;
+    border: 0.1rem solid rgba(80, 109, 141, 0.16);
+    border-radius: 0.8rem;
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: 0 1.2rem 3rem rgba(31, 53, 84, 0.08);
+}
+
+.post-detail__back {
+    width: fit-content;
+    color: #1976d2;
+    font-size: 1.4rem;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.post-detail__back:hover,
+.post-detail__back:focus {
+    text-decoration: underline;
+}
+
+.post-detail__topics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.post-detail h1 {
+    color: #172033;
+    font-size: clamp(2.8rem, 4vw, 4.4rem);
+    line-height: 1.1;
+}
+
+.post-detail__body {
+    color: #3f4f66;
+    font-size: 1.8rem;
+}
+
+.post-detail__stats,
+.post-detail__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.post-detail__stats span,
+.post-detail__meta span {
+    padding: 0.6rem 1.1rem;
+    border-radius: 99rem;
+    color: #516176;
+    background: #f2f6fb;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+@media (max-width: 760px) {
+    .app,
+     .results-page,
+    .post-detail-page {
+        width: min(92vw, 60rem);
+        padding: 3.2rem 0;
+        gap: 2.4rem;
+    }
+
+    .search-bar input {
+        height: 5.8rem;
+        padding: 0 1.8rem;
+    }
+
+    .recent-posts__posts {
+        grid-template-columns: 1fr;
+    }
+
+    .result-post,
+    .post-detail {
+        padding: 1.8rem;
+    }
 }

@@ -10,7 +10,7 @@ class SearchBar extends Component {
     }
 
     renderInput(field) {
-        return <input type="text" placeholder="&#xf002; Search SmartLearning" {...field.input} />
+         return <input type="text" placeholder="Search SmartLearning" {...field.input} />
     }
 
     render() {
